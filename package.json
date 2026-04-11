@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "tsup src/index.ts --format esm --outDir dist",
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "migrate": "tsx src/db/migrate.ts",
     "prepare": "husky"
   },
   "keywords": [],
@@ -21,12 +22,14 @@
   "dependencies": {
     "dotenv": "^17.4.1",
     "eslint-config-prettier": "^10.1.8",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "pg": "^8.20.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
     "@types/express": "^5.0.6",
     "@types/node": "^25.6.0",
+    "@types/pg": "^8.20.0",
     "eslint": "^9.39.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jest": "^29.15.2",
@@ -37,6 +40,7 @@
     "nodemon": "^3.1.14",
     "prettier": "^3.8.2",
     "ts-node": "^10.9.2",
+    "tsup": "^8.5.1",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.58.1"

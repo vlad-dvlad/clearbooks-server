@@ -40,6 +40,12 @@ export default defineConfig([
       'n/no-unpublished-import': 'off',
     },
   },
+  {
+    files: ['**/*.{ts,mts,cts}'],
+    rules: {
+      'n/no-missing-import': ['error', { tryExtensions: ['.ts', '.js', '.json'] }],
+    },
+  },
   prettierConfig,
   {
     rules: {
