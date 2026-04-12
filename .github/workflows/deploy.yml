@@ -26,20 +26,3 @@ jobs:
 
       - name: Type check
         run: npm run build
-
-  deploy:
-    name: Deploy to Railway
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    needs: check
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Railway CLI
-        run: npm install -g @railway/cli
-
-      - name: Deploy
-        run: railway up --detach --service clearbooks-api
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
