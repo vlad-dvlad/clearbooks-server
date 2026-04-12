@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "migrate": "tsx src/db/migrate.ts",
-    "prepare": "husky"
+    "prepare": "node -e \"if (process.env.CI) process.exit(0)\" || husky"
   },
   "keywords": [],
   "author": "",
