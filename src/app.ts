@@ -8,6 +8,9 @@ app.use(express.json());
 
 app.use(cors({ origin: config.clientUrl, credentials: true }));
 
+// health check
+app.get('/health', (_, res) => res.json({ status: 'ok', version: consts.API_VERSION }));
+
 app.use(`/api/${consts.API_VERSION}`, router);
 
 export default app;
