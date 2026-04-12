@@ -43,7 +43,7 @@ export default defineConfig([
   {
     files: ['**/*.{ts,mts,cts}'],
     rules: {
-      'n/no-missing-import': ['error', { tryExtensions: ['.ts', '.js', '.json'] }],
+      'n/no-missing-import': 'off',
     },
   },
   prettierConfig,

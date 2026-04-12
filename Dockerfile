@@ -16,6 +16,7 @@ WORKDIR /app
 
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/src/db/migrations ./dist/db/migrations
 
 USER node
 

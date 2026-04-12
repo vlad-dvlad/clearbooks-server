@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup src/index.ts --format esm --outDir dist",
+    "build": "tsup src/index.ts src/db/migrate.ts --format esm --outDir dist",
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
     "lint": "eslint .",
@@ -20,14 +20,21 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1029.0",
+    "@aws-sdk/s3-request-presigner": "^3.1029.0",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.1",
     "eslint-config-prettier": "^10.1.8",
     "express": "^5.2.1",
-    "pg": "^8.20.0"
+    "multer": "^2.1.1",
+    "pg": "^8.20.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
     "@types/express": "^5.0.6",
+    "@types/multer": "^2.1.0",
     "@types/node": "^25.6.0",
     "@types/pg": "^8.20.0",
     "eslint": "^9.39.4",
